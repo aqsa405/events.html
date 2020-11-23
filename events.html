@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+<body>
+
+    <input type="button"  onmousemove="col()"  value="Make me Red" onclick="col()"
+    ondblclick="message('black','white')" onmouseover="message('red','brown')"
+    onmouseout="message('white','black')">
+    <p class="para"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum id dolorem non dolores, hic fugiat delectus ea iste corporis velit eligendi autem, quibusdam dignissimos facilis nesciunt cupiditate. Culpa, illo ullam!</p>
+    <p class="para"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum id dolorem non dolores, hic fugiat delectus ea iste corporis velit eligendi autem, quibusdam dignissimos facilis nesciunt cupiditate. Culpa, illo ullam!</p>
+    <script>
+
+function get(min , max){
+    return Math.random() *(max - min) + min;
+}
+function randomColor() {
+    return "rgb("+ get(0,255) + "," +get(0,255) + "," + get(0,255)+")";
+}
+function col(){
+    document.body.style.backgroundColor = randomColor();
+}
+
+function message(color,color1){
+    for (var index = 0;index < document.getElementsByClassName("para").length;index++){
+        document.getElementsByClassName("para")[index].style.backgroundColor=color;
+        document.getElementsByClassName("para")[index].style.color=color1
+    }
+}
+
+    </script>
+</body>
+</html>
